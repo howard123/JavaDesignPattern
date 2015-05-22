@@ -36,10 +36,18 @@ public class CcalculateMockTest {
 			System.out.println(mockList.get(0));
 		}
 
-		when(mockList.get(anyInt())).thenReturn("six");
+		// IF we remove .themThrow then the get method will return String six on
+		// any index
+		when(mockList.get(anyInt()))
+		// .thenThrow(new NullPointerException())
+				.thenReturn("six");
 
-		System.out.println(mockList.get(0));
-		System.out.println(mockList.get(0));
+		try {
+			System.out.println(mockList.get(1));
+			System.out.println(mockList.get(9999));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 
 		// Verify that mockList object has add String one object
 		verify(mockList).add("one");
