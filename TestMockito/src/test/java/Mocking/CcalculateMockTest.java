@@ -1,5 +1,6 @@
 package Mocking;
 
+import static org.mockito.Matchers.anyInt;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
@@ -35,6 +36,12 @@ public class CcalculateMockTest {
 			System.out.println(mockList.get(0));
 		}
 
+		when(mockList.get(anyInt())).thenReturn("six");
+
+		System.out.println(mockList.get(0));
+		System.out.println(mockList.get(0));
+
+		// Verify that mockList object has add String one object
 		verify(mockList).add("one");
 	}
 }
