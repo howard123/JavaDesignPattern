@@ -1,7 +1,7 @@
 package creationalpattern.factorymethod;
 
-public interface CarFactory {
+public abstract class CarFactory {
 
-	public Car createCar();
+	public abstract Car createCar(String model);
 
 }
