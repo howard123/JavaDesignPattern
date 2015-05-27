@@ -16,7 +16,6 @@ public class Adapter implements PhoneList {
 	}
 
 	public String getPhoneList() {
-		// TODO Auto-generated method stub
 		String[][] emps = _adaptee.getEmployee();
 		StringBuilder phoneList = new StringBuilder();
 
@@ -37,5 +36,6 @@ public class Adapter implements PhoneList {
 		PhoneList list = new Adapter(new Adaptee());
 
 		System.out.println(list.getPhoneList());
-	}
+	} // TODO Auto-generated method stub
+
 }
